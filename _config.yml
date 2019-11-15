@@ -1,9 +1,9 @@
 # Site settings
-title: Cools Page
-SEOTitle: Cools Page
+title: Pan's Blog
+SEOTitle: Pan's Blog | 晓锋的博客
 header-img: img/post-bg-desk.jpg
-email: evan_cools@sina.com
-description: "This is Evan Cools"
+email: evan_cools@sina.cn
+description: "a github page about discrete choice modeling"
 keyword: "discrete choice, behavior, logit"
 url: "http://xf-pan.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -11,7 +11,7 @@ github_repo: "https://github.com/xf-pan/xf-pan.github.io.git" # you code reposit
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "This is Evan Cools."
+sidebar-about-description: "This is Dr. Pan."
 sidebar-avatar: /img/about-EC-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
