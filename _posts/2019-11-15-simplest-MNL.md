@@ -10,7 +10,8 @@ tags:                                #标签
     - MNL, dicmo, mlogit
 ---
 
-## packages loading
+packages loading
+----------------
 
     library(mlogit)
 
@@ -57,60 +58,34 @@ tags:                                #标签
     ## The following objects are masked from 'package:base':
     ## 
     ##     intersect, setdiff, setequal, union
-    
-## MNL using mlogit
 
     data("Heating", package = "mlogit")
-    H1 <- mlogit.data(Heating, shape = "wide", choice = "depvar", varying = c(3:12))
-    M1 <- mlogit(depvar ~ ic + oc | 0, H1)
-    summary(M1)
 
-    ## 
-    ## Call:
-    ## mlogit(formula = depvar ~ ic + oc | 0, data = H1, method = "nr")
-    ## 
-    ## Frequencies of alternatives:
-    ##       ec       er       gc       gr       hp 
-    ## 0.071111 0.093333 0.636667 0.143333 0.055556 
-    ## 
-    ## nr method
-    ## 4 iterations, 0h:0m:0s 
-    ## g'(-H)^-1g = 1.56E-07 
-    ## gradient close to zero 
-    ## 
-    ## Coefficients :
-    ##       Estimate  Std. Error z-value  Pr(>|z|)    
-    ## ic -0.00623187  0.00035277 -17.665 < 2.2e-16 ***
-    ## oc -0.00458008  0.00032216 -14.217 < 2.2e-16 ***
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Log-Likelihood: -1095.2
-    
-## MNL using dicmo
+MNL using dicmo
+---------------
 
-    H2 <- as_tibble(Heating)
-    H2 <- rename(H2,
+    H1 <- as_tibble(Heating)
+    H1 <- rename(H1,
                  'ic:gc' = ic.gc, 'ic:gr' = ic.gr, 'ic:ec' = ic.ec,
                  'ic:er' = ic.er, 'ic:hp' = ic.hp,
                  'oc:gc' = oc.gc, 'oc:gr' = oc.gr, 'oc:ec' = oc.ec,
                  'oc:er' = oc.er, 'oc:hp' = oc.hp)
     attrs <- list(attrs_alts = tibble(ic = c(1,1,1,1,1),
                                       oc = c(1,1,1,1,1)),
-                  asc = NULL,
-                  context = NULL)
+                  asc        = NULL,
+                  context    = NULL)
     alts <- c('gc', 'gr', 'ec', 'er', 'hp')
-    M2 <- X.logit(H2, choice = 'depvar', alts = alts, attrs = attrs)
+    M1 <- X.logit(H1, choice = 'depvar', alts = alts, attrs = attrs)
 
-    ## 2019-11-15 20:57:05 - model estimation starts
-    ## 2019-11-15 20:57:05 - model estimation ends
-    
-    summary(M2)
+    ## 2019-11-15 21:27:54 - model estimation starts
+    ## 2019-11-15 21:27:54 - model estimation ends
+
+    summary(M1)
 
     ## --------------------------------------------------------- 
     ## Model name: logit 
-    ## Model estimation starts at: 2019-11-15 20:57:05 
-    ## Model estimation ends at: 2019-11-15 20:57:05 
+    ## Model estimation starts at: 2019-11-15 21:27:54 
+    ## Model estimation ends at: 2019-11-15 21:27:54 
     ## Model estimation method: BFGS maximization with numeric Hessian matrix 
     ## Model diagnosis: successful convergence  
     ## --------------------------------------------------------- 
@@ -130,3 +105,32 @@ tags:                                #标签
     ## ------ 
     ## Signif. codes: *** p < 0.01, ** p < 0.05, * p < 0.1 
     ## ---------------------------------------------------------
+
+MNL using mlogit
+----------------
+
+    H2 <- mlogit.data(Heating, shape = "wide", choice = "depvar", varying = c(3:12))
+    M2 <- mlogit(depvar ~ ic + oc | 0, H2)
+    summary(M2)
+
+    ## 
+    ## Call:
+    ## mlogit(formula = depvar ~ ic + oc | 0, data = H2, method = "nr")
+    ## 
+    ## Frequencies of alternatives:
+    ##       ec       er       gc       gr       hp 
+    ## 0.071111 0.093333 0.636667 0.143333 0.055556 
+    ## 
+    ## nr method
+    ## 4 iterations, 0h:0m:0s 
+    ## g'(-H)^-1g = 1.56E-07 
+    ## gradient close to zero 
+    ## 
+    ## Coefficients :
+    ##       Estimate  Std. Error z-value  Pr(>|z|)    
+    ## ic -0.00623187  0.00035277 -17.665 < 2.2e-16 ***
+    ## oc -0.00458008  0.00032216 -14.217 < 2.2e-16 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Log-Likelihood: -1095.2
