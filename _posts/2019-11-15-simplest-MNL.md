@@ -10,7 +10,7 @@ tags:                                #标签
     - MNL, dicmo, mlogit
 ---
 
-## library loading
+## packages loading
 
     library(mlogit)
 
