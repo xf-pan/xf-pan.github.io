@@ -13,8 +13,3 @@ tags:
 
 
 > 下滑这里查看更多内容
-
-
-### Thanks
-
-[Reveal.js](http://lab.hakim.se/reveal-js)
