@@ -1,8 +1,9 @@
 ---
-layout: default
-title:  从最简单开始
-description: "鱼，我所欲也，熊掌亦我所欲也；二者不可得兼，舍鱼而取熊掌者也。"
-header-img: "img/choice-bg-4.jpg"
+layout:     default                     # 使用的布局（不需要改）
+title:      从最简单开始               # 标题 
+date:       2019-11-16               # 时间
+author:     PAN                      # 作者
+header-img: img/post-bg-2015.jpg     #这篇文章标题背景图片
 catalog: true                        # 是否归档
 ---
 
