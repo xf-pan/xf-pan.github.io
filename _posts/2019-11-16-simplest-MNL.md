@@ -2,7 +2,7 @@
 layout:     post                     # 使用的布局（不需要改）
 title:      从最简单开始               # 标题 
 subtitle:   multinomial logit model  #副标题
-date:       2019-11-15               # 时间
+date:       2019-11-16               # 时间
 author:     PAN                      # 作者
 header-img: img/post-bg-2015.jpg     #这篇文章标题背景图片
 catalog: true                        # 是否归档
