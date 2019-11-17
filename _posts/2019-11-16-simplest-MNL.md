@@ -106,7 +106,7 @@ MNL using dicmo
     ## Signif. codes: *** p < 0.01, ** p < 0.05, * p < 0.1 
     ## ---------------------------------------------------------
 
-MNL using dicmo
+MNL using mlogit
 ---------------
 
     H2 <- mlogit.data(Heating, shape = "wide", choice = "depvar", varying = c(3:12))
