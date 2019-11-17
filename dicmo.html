@@ -45,18 +45,21 @@ header-img: "img/dicmo-bg-1.jpg"
 	选择合并某些水平。具体合并哪些水平，就需要通过不停调式，从而带来不必要的麻烦。dicmo旨在避免这些琐碎的、不必要的，同时可能引起不易
 	察觉的错误的工作量。</p>
 	
-	<p>其三，dicmo包含多种离散选择模型。这是一个宏大而遥远的目标。目前来说，我计划包括的模型有：multinomal logit/probit，nested logit，
+    <p>其三，dicmo允许估计同一变量对不同选项的不同影响（alternative-specific parameters）。具体来说，就是用户可以随意指定某一变量（包括
+	ASCs、环境变量和个人属性变量）对任意某些特定选项的影响相同或者不同。当然，这其实也属于简化数据处理。然而，在多数软件中，这个功能
+	并不需要通过调整数据来实现。因此，这里单独提出来进行说明。</p>
+	
+	<p>其四，dicmo包含多种离散选择模型。这是一个宏大而遥远的目标。目前来说，我计划包括的模型有：multinomal logit/probit，nested logit，
 	cross nested logit，exploded logit，generalized ordered logit/probit，random parameter model，error component model，hybrid choice model等。
 	同时，还会考虑将这些模型分别应用于随机效用最大化和随机后悔最小化。目前来说，dicmo的开发处于0.1.0版本。在这个版本中，我将只考虑随
 	机效用最大化，包括multinomal logit，nested logit，exploded logit，generalized ordered logit/probit。</p>
 	
-	<p>其四，dicmo允许估计同一变量对不同选项的不同影响（alternative-specific parameters）。具体来说，就是用户可以随意指定某一变量（包括
-	ASCs、环境变量和个人属性变量）对任意某些特定选项的影响相同或者不同。</p>
-	
 	<p>以下，我会通过不同的例子，具体介绍dicmo各个功能。例子中采用的数据，或是来自于某些R包自身，或者来自于其他外部（对于这种情况，我
 	会给出链接以供下载查看）。本文最后，提供dicmo的下载链接，包括tar.gz和zip格式两种。</p>
+	
+	<h3>dicmo应用实例</h3>
 
-    <h3>MNL - multinomial logit model</h3>
+    <p><a href="https://xf-pan.github.io/2019/11/16/simplest-MNL/">1. 从最简单开始：multinomial logit model</a></p>
 
     <p>以mlogit包中的数据集</p>
 
