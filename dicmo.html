@@ -38,7 +38,20 @@ header-img: "img/dicmo-bg-1.jpg"
 	用，其可靠性得到了使用者的广泛认可。因此，借助这些包，极大的简化了我的开发过程，使我能够专注于模型本身，而不是其他一些次要的事情。</p>
 
     <p>其二，dicmo可以简化用户数据处理的工作。这是我开发dicmo的一个重要目标 - 简化在模型估计之前的数据处理流程。这里所说的数据处理，
-	主要是指数据集由wide型到long型的转化以及离散变量的coding过程，未来还会包括同一个变量多个水平之间的合并。</p>
+	主要是指数据集由wide型到long型的转化以及离散变量的coding过程，未来还会包括同一个变量多个水平之间的合并。由于有的软件需要输入数据
+	为long型（比如NLOGIT），而有的需要输入数据为wide型（比如biogeme）。因此在不同软件之间转换时，同时需要转换数据格式。另一方面，用户
+	可能会不停地调试模型，直到得到满意的结果。因此，变量可能会在连续性和离散型之间进行转化；即便是离散型变量，有时也会采用不同的水平
+	作为基础。这就导致了用户需要不停地调整数据，因此带来繁杂的工作量。再有，有些离散变量可能包含非常多的水平（比如年龄），用户可能会
+	选择合并某些水平。具体合并哪些水平，就需要通过不停调式，从而带来不必要的麻烦。dicmo旨在避免这些琐碎的、不必要的，同时可能引起不易
+	察觉的错误的工作量。</p>
+	
+	<p>其三，dicmo包含多种离散选择模型。这是一个宏大而遥远的目标。目前来说，我计划包括的模型有：multinomal logit/probit，nested logit，
+	cross nested logit，exploded logit，generalized ordered logit/probit，random parameter model，error component model，hybrid choice model等。
+	同时，还会考虑将这些模型分别应用于随机效用最大化和随机后悔最小化。目前来说，dicmo的开发处于0.1.0版本。在这个版本中，我将只考虑随
+	机效用最大化，包括multinomal logit，nested logit，exploded logit，generalized ordered logit/probit。</p>
+	
+	<p>其四，dicmo允许估计同一变量对不同选项的不同影响。具体来说，就是用户可以随意指定某一变量（包括ASCs、环境变量和个人属性变量）对
+	任意某些特定选项的影响相同或者不同。</p>
 
     <h3>MNL - multinomial logit model</h3>
 
